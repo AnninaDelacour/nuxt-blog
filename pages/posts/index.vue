@@ -1,0 +1,24 @@
+<template>
+  <div class="posts-page">
+    <PostList />
+  </div>
+</template>
+
+<script>
+import PostList from "@/components/posts/PostList"
+
+export default {
+  components: {
+    PostList
+  }
+};
+</script>
+
+<style lang="scss">
+.posts-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>
