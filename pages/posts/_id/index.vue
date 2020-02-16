@@ -35,23 +35,18 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: {
-          id: "1",
-          title: "A green world (ID: " + context.params.id +")",
-          previewText: "20 simple things you can do to make a better tomorrow",
-          author: "Annina",
-          updatedDate: new Date(),
-          content:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-          thumbnail:
-            "https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        }
-      });
-    }, 1000);
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-24bc5.firebaseio.com/posts/' + context.params.id + '.json')
+    .then(res => {
+      return {
+        loadedPosts: res.data
+      }
+    })
+    .catch(e => context.error(e))
   }
 };
 </script>

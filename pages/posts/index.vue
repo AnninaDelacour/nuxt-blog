@@ -5,32 +5,22 @@
 </template>
 
 <script>
-import PostList from "@/components/posts/PostList";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
     PostList
   },
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: "1",
-            title: "A green world",
-            previewText:
-              "20 simple things you can do to make a better tomorrow",
-            thumbnail:
-              "https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          }
-        ]
-      });
-    }, 1500);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
 };
 </script>
 
-<style lang="scss">
+
+<style scoped>
 .posts-page {
   display: flex;
   justify-content: center;

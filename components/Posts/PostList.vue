@@ -1,14 +1,15 @@
 <template>
   <section class="post-list">
-      <PostPreview
-      v-for="post in posts" :key="post.id"
-        :id="post.id"
-        :is-admin="isAdmin"
-        :thumbnail="post.thumbnail"
-        :title="post.title"
-        :previewText="post.previewText"
-      />
-
+    <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText" />
+  </section>
+</template>
       <!-- 
         https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
 
@@ -30,11 +31,10 @@
         title="Living in harmony and balance with with our earth"
         previewText="What we should know and what we should do"
       /> -->
-    </section>
-</template>
+
 
 <script>
-import PostPreview from "@/components/posts/PostPreview";
+import PostPreview from '@/components/Posts/PostPreview'
 
 export default {
   components: {
@@ -50,15 +50,15 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
-.posts-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .posts-page {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .post-list {
   display: flex;

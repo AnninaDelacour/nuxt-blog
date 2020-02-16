@@ -8,28 +8,33 @@
 </template>
 
 <script>
-import PostList from "@/components/posts/PostList";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
     PostList
   },
-   data() {
-     return {
-       loadedPosts: [
-         { id: "1",
-         title: "A green world",
-         previewText: "20 simple things you can do to make a better tomorrow",
-         thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-         },
-         { id: "2",
-         title: "Another green world",
-         previewText: "20 simple things you can do to make a better tomorrow",
-         thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-         }
-       ]
-     }
-   }
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
+  //  data() {
+  //    return {
+  //      loadedPosts: [
+  //        { id: "1",
+  //        title: "A green world",
+  //        previewText: "20 simple things you can do to make a better tomorrow",
+  //        thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  //        },
+  //        { id: "2",
+  //        title: "Another green world",
+  //        previewText: "20 simple things you can do to make a better tomorrow",
+  //        thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  //        }
+  //      ]
+  //    }
+  //  }
 };
 </script>
 

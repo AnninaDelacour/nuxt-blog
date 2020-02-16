@@ -1,25 +1,33 @@
 <template>
   <div class="admin-page">
+    <Header />
     <section class="new-post">
       <AppButton @click="$router.push('/admin/new-post')">Create post</AppButton>
     </section>
     <section class="existing-posts">
       <h1>Existing posts</h1>
-      <PostList isAdmin />
+      <PostList :posts="loadedPosts" isAdmin />
     </section>
   </div>
 </template>
 
 <script>
-import PostList from "@/components/posts/PostList";
-import AppButton from "@/components/UI/AppButton";
+import PostList from "@/components/Posts/PostList"
+import AppButton from "@/components/UI/AppButton"
+import Header from "@/components/Navigation/Header"
 
 export default {
   components: {
     PostList,
-    AppButton
+    AppButton,
+    Header
   },
-  layout: 'admin'
+  layout: 'admin',
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
 };
 </script>
 
