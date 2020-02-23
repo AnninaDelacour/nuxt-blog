@@ -3,6 +3,7 @@
     <Header />
     <section class="new-post">
       <AppButton @click="$router.push('/admin/new-post')">Create post</AppButton>
+      <AppButton @click="onLogout">Logout</AppButton>
     </section>
     <section class="existing-posts">
       <h1>Existing posts</h1>
@@ -27,6 +28,11 @@ export default {
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
+    }
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout')
     }
   }
 };
