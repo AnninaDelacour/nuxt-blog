@@ -1,8 +1,6 @@
 <template>
   <div>
-     <transition name="layout" mode="out-in">
     <nuxt/>
-  </transition>
   </div>
 </template>
 

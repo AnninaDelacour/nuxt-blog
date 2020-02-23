@@ -17,12 +17,13 @@ import AppButton from "@/components/UI/AppButton"
 import Header from "@/components/Navigation/Header"
 
 export default {
+  layout: 'admin',
   components: {
     PostList,
     AppButton,
     Header
   },
-  layout: 'admin',
+  middleware: ['check-auth', 'auth'],
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts

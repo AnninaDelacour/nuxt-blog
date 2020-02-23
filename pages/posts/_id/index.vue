@@ -22,7 +22,7 @@
         <div class="col-md-12">
           <h1 class="post-title">{{ loadedPosts.title }}</h1>
           <div class="post-details">
-            <div class="post-detail">{{ loadedPosts.updatedDate }}</div>
+            <div class="post-detail">{{ loadedPosts.updatedDate | date }}</div>
             <div class="post-detail">{{ loadedPosts.author }}</div>
           </div>
         </div>
@@ -107,31 +107,3 @@ hr {
 
 //background-image: linear-gradient(to bottom, #5d5d5a 50%, #ffd615 50%, #ffd615 75% #2cb978 75%);
 </style>
-
-<!-- <div>
-    <div class="container">
-      <div class="row">
-        <div class="post-header-img" :style="'background:url('+logo+')'">
-            <div class="col-sm-12 text-center">
-          <h1 class="pt-5">Vertically Centered Masthead Content</h1>
-          <p class="lead">A great starter layout for a landing page</p>
-        </div>
-        </div>
-
-        
-      </div>
-    </div>
-
-    <section>
-      <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Repellendus ab nulla dolorum autem nisi officiis blanditiis voluptatem hic,
-            assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit expedita.
-            </p>
-        </div>
-    </div>
-      </div>
-    </section>
-  </div> -->

@@ -7,8 +7,7 @@
 
 <script>
 export default {
-    layout: 'posts'
-};
+}
 </script>
 
 <style lang="scss">

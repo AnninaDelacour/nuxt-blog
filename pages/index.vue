@@ -1,87 +1,69 @@
 <template>
-  <div class="home-page">
-    <section class="intro">
-      <h1>Get the latest climate news</h1>
-    </section>
-    <PostList :posts="loadedPosts" />
-  </div>
+  <mdb-container>
+    <mdb-view>
+      <mdb-mask class="gradient d-flex justify-content-center align-items-center">
+        <mdb-container>
+          <mdb-row>
+            <div class="white-text text-center text-md-left col-md-6 mb-5">
+              <h1 class="h1-responsive font-weight-bold">Make purchases with our app</h1>
+              <hr class="hr-light" />
+              <h6 class="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt
+                dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae
+                iste.
+              </h6>
+              <mdb-btn color="white">Download</mdb-btn>
+              <mdb-btn outline="white">Learn More</mdb-btn>
+            </div>
+            <mdb-col md="6" xl="5" class="mt-xl-5">
+              <img
+                src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png"
+                class="img-fluid"
+              />
+            </mdb-col>
+          </mdb-row>
+        </mdb-container>
+      </mdb-mask>
+    </mdb-view>
+  </mdb-container>
 </template>
 
 <script>
 import PostList from "@/components/Posts/PostList";
+import {
+  mdbContainer,
+  mdbRow,
+  mdbCol,
+  mdbInput,
+  mdbView,
+  mdbMask,
+  mdbBtn
+} from "mdbvue";
 
 export default {
   components: {
-    PostList
-  },
-  computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
-    }
+    PostList,
+    mdbContainer,
+    mdbRow,
+    mdbCol,
+    mdbInput,
+    mdbView,
+    mdbMask,
+    mdbBtn
   }
-  //  data() {
-  //    return {
-  //      loadedPosts: [
-  //        { id: "1",
-  //        title: "A green world",
-  //        previewText: "20 simple things you can do to make a better tomorrow",
-  //        thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-  //        },
-  //        { id: "2",
-  //        title: "Another green world",
-  //        previewText: "20 simple things you can do to make a better tomorrow",
-  //        thumbnail:"https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-  //        }
-  //      ]
-  //    }
-  //  }
 };
 </script>
 
 <style lang="scss" scoped>
-.intro {
-  height: 200px;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
-  background-position: center;
+.view {
+  background-image: url("~@/assets/images/flowerwall.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-  /* OR
-  background-image: url('~assets/images/mountain-view.jpg');
-  background-position: top;
-  */
+  background-position: center center;
+  height: 100vh;
 }
 
-.intro h1 {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 90%;
-  font-size: 1.5rem;
-  color: black;
-  background-color: rgb(211, 211, 211);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px black;
-  box-sizing: border-box;
-  border: 1px solid black;
+h6 {
+  line-height: 1.7;
 }
-
-@media (min-width: 768px) {
-  .intro h1 {
-    font-size: 2rem;
-  }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
 </style>
